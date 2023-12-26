@@ -14,8 +14,13 @@ const Accrodion = () => {
   const handlelmulitiselectuon = (slelectID) => {
     let copymain = [...main];
     const finbdcurruntID = copymain.indexOf(slelectID);
-    console.log(finbdcurruntID)
+
+    if (finbdcurruntID === -1) copymain.push(slelectID);
+    else copymain.splice(finbdcurruntID, 1);
+
+    setmain(copymain);
   };
+  console.log(main);
 
   const handleselection = () => {
     setmultisection(!multisection);
@@ -40,7 +45,7 @@ const Accrodion = () => {
                   onClick={
                     multisection
                       ? () => handlelmulitiselectuon(items.id)
-                      : () => showselected(items.id)
+                      : () => showselected(items.id)   
                   }
                   className="mt-3 font-bold text-2xl cursor-pointer flex gap-2  bg-green-500 p-3 "
                 >
@@ -48,9 +53,17 @@ const Accrodion = () => {
                   <span>+</span>
                 </div>
 
-                {selected === items.id ? (
+                {multisection
+                  ? main.indexOf(items.id) !== -1 && (
+                      <div className="text-black-600">{items.answer}</div>
+                    )
+                  : selected === items.id && (
+                      <div className="text-black-600">{items.answer}</div>
+                    )}
+
+                {/* {selected === items.id ? (
                   <div className="text-black-600">{items.answer}</div>
-                ) : null}
+                ) : null} */}
               </>
             ))
           : null}
@@ -59,4 +72,4 @@ const Accrodion = () => {
   );
 };
 
-export default Accrodion;
+export default Accrodion; 

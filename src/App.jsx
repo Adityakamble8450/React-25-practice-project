@@ -1,11 +1,15 @@
 import React from 'react'
 import Accrodion from './Componants/Accrodion'
+import ColorChange from './Componants/ColorChange'
 
 
 const App = () => {
   return (
     <div>
-      <Accrodion />
+      {/* Acrroding project Componants  */}
+      {/* <Accrodion /> */}
+      <ColorChange/>
+
     </div>
   )
 }
