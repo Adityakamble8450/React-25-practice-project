@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const ColorChange = () => {
   const [typeofColor, settypeofColor] = useState("hex");
   const [Color, setColor] = useState(null);
+  const [btncolor, setbtncolor] = useState(false);
 
   const handleRandomes = (length) => {
     return Math.floor(Math.random() * length);
@@ -25,8 +26,12 @@ const ColorChange = () => {
     let g = handleRandomes(256);
     let b = handleRandomes(256);
 
-    setColor(`rgb(${r},${g},${b})`)
+    setColor(`rgb(${r},${g},${b})`);
   };
+  useEffect(() => {
+    if (typeofColor === "rgb") handelrgbColor();
+    handelhexColor();
+  }, [typeofColor]);
 
   return (
     <div
@@ -54,14 +59,12 @@ const ColorChange = () => {
         Create Randome Color
       </button>
 
-
-
-      <div className="absolute top-[50%]  left-[50%] translate-x-[-50%] translate-y-[-50%] text text-5xl font-bold"><h1>{typeofColor}--{Color}</h1></div>
+      <div className="absolute top-[50%]  left-[50%] translate-x-[-50%] translate-y-[-50%] text text-5xl font-bold">
+        <h1>
+          {typeofColor}--{Color}
+        </h1>
+      </div>
     </div>
-
-
-
-
   );
 };
 
