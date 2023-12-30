@@ -16,7 +16,7 @@ const StarRating = ({ starsNumber = 5 }) => {
   };
 
   return (
-    <div className="stars flex justify-center  w-full h-screen gap-2">
+    <div className="stars flex justify-center items-center  w-full h-screen gap-2">
       {[...Array(starsNumber)].map((_, i) => {
         i += 1;
         return (
