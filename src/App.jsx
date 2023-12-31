@@ -3,6 +3,7 @@ import Accrodion from "./Componants/Accrodion";
 import ColorChange from "./Componants/ColorChange";
 import StarRating from "./Componants/StarRating/StarRating";
 import Imageslider from "./Componants/ImgSlider/Imageslider";
+import Loadmore from "./Componants/LoadMore/Loadmore";
 
 const App = () => {
   return (
@@ -17,11 +18,19 @@ const App = () => {
       {/* <StarRating/> */}
 
       {/* Project-4 Image slider with API  */}
-      <Imageslider
+      {/* <Imageslider
         url={`https://picsum.photos/v2/list`}
         limit={"10"}
         page={"1"}
-      />
+      /> */}
+
+
+
+      {/* project - 5 : button more product componant */}
+      <Loadmore/>
+
+
+
     </div>
   );
 };
