@@ -4,6 +4,8 @@ import ColorChange from "./Componants/ColorChange";
 import StarRating from "./Componants/StarRating/StarRating";
 import Imageslider from "./Componants/ImgSlider/Imageslider";
 import Loadmore from "./Componants/LoadMore/Loadmore";
+import Imagesearch from "./Componants/imagesearch/Imagesearch";
+
 
 const App = () => {
   return (
@@ -27,7 +29,14 @@ const App = () => {
 
 
       {/* project - 5 : button more product componant */}
-      <Loadmore/>
+      {/* <Loadmore/> */}
+
+
+
+      {/* project-6 -- image searching componant */}
+      <Imagesearch/>
+
+
 
 
 
